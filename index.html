@@ -110,11 +110,34 @@
     </table>
   </section>
 
-  <section id="contact"> 
+  <!-- <section id="contact"> 
     <button id="contact"><img src="images/Whatsapp.png" alt="">Whatsapp Us</button>
     <a href="tel:+215446" id="callButton"></a>
-  </section>
+  </section> -->
   
+
+  <section id="contact"> 
+    <button id="whatsappBtn">
+        <img src="images/Whatsapp.png" alt=""> Whatsapp Us
+    </button>
+  </section>
+
+  <script>
+      document.querySelector("#whatsappBtn").addEventListener("click", function () {
+          let confirmCall = confirm("Do you want to call +215446 or send a WhatsApp message?");
+          
+          if (confirmCall) {
+              // Redirect to WhatsApp with a message
+              let phoneNumber = "+215446";  // Replace with the actual number
+              let message = encodeURIComponent("Hello! I need some help.");
+              let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+              
+              window.location.href = whatsappURL; // Open WhatsApp
+          }
+      });
+  </script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/instr.js"></script>
 </body>
